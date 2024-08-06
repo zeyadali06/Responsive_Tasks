@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_designs/Widgets/CustomDrawer.dart';
+import 'package:responsive_designs/Widgets/TopBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,13 +25,28 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff101214),
-      appBar: AppBar(),
-      drawer: const CustomDrawer(),
-      body: Container(),
+      body: Row(
+        children: [
+          const CustomDrawer(),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Column(
+                  children: [
+                    TopBar(),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
-
-
-
-
