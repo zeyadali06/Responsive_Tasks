@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_designs/Widgets/CustomDrawer.dart';
 import 'package:responsive_designs/Widgets/TopBar.dart';
+import 'package:responsive_designs/Widgets/CustomDrawer.dart';
+import 'package:responsive_designs/Widgets/CustomerSection.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,9 +38,11 @@ class HomePage extends StatelessWidget {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Column(
+                child: Column(
                   children: [
-                    TopBar(),
+                    const TopBar(),
+                    const SizedBox(height: 30),
+                    CustomerSection(),
                   ],
                 ),
               ),
