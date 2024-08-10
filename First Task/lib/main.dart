@@ -33,13 +33,13 @@ class HomePage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: Container(
-                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
                   children: [
+                    const SizedBox(height: 20),
                     const TopBar(),
                     const SizedBox(height: 30),
                     CustomerSection(),
