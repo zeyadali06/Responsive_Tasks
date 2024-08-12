@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:responsive_designs/Models/CustomersModel.dart';
 import 'package:responsive_designs/Widgets/CustomerContainer.dart';
+import 'package:responsive_designs/constants.dart';
 
 class CustomerSection extends StatelessWidget {
   CustomerSection({super.key});
@@ -16,27 +17,35 @@ class CustomerSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          return CustomScrollView(
-            scrollDirection: Axis.horizontal,
-            slivers: [
-              const SliverToBoxAdapter(child: SizedBox(width: 20)),
-              SliverFillRemaining(
-                hasScrollBody: false,
-                child: Row(
-                  children: List.generate(4, (index) {
-                    return Padding(
-                      padding: EdgeInsets.only(left: index > 0 ? 10 : 0),
+      child: CustomScrollView(
+        scrollDirection: Axis.horizontal,
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Expanded(
+              child: Row(
+                children: List.generate(4, (index) {
+                  double leftPadding = 0, rightPadding = 0;
+                  if (index == 0) {
+                    leftPadding = kPadding;
+                  } else if (index > 0 && index < customers.length - 1) {
+                    leftPadding = 10;
+                  } else {
+                    leftPadding = 10;
+                    rightPadding = kPadding;
+                  }
+
+                  return Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: leftPadding, right: rightPadding),
                       child: CustomerContainer(customer: customers[index]),
-                    );
-                  }),
-                ),
+                    ),
+                  );
+                }),
               ),
-              const SliverToBoxAdapter(child: SizedBox(width: 20)),
-            ],
-          );
-        },
+            ),
+          ),
+        ],
       ),
     );
   }

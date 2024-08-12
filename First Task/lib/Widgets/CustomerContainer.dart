@@ -25,6 +25,7 @@ class CustomerContainer extends StatelessWidget {
               const SizedBox(height: 5),
               Text(customer.number.toString(), style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   customer.percentage.contains("-") ? const Icon(Icons.arrow_circle_down, color: Colors.red, size: 12) : const Icon(Icons.arrow_circle_up, color: Colors.green, size: 12),
                   const SizedBox(width: 1),
@@ -38,7 +39,7 @@ class CustomerContainer extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(width: 10),
+          const Expanded(child: SizedBox()),
           Container(
             width: 28,
             height: 28,
