@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_designs/Widgets/TopBar.dart';
 import 'package:responsive_designs/Widgets/CustomDrawer.dart';
 import 'package:responsive_designs/Widgets/CustomerSection.dart';
+import 'package:responsive_designs/Widgets/UpcomingScedule.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,11 +39,14 @@ class HomePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     const SizedBox(height: 20),
                     const TopBar(),
                     const SizedBox(height: 30),
                     CustomerSection(),
+                    const UpcomingScheduleStatistics(),
                   ],
                 ),
               ),
