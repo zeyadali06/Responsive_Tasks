@@ -22,27 +22,25 @@ class CustomerSection extends StatelessWidget {
         slivers: [
           SliverFillRemaining(
             hasScrollBody: false,
-            child: Expanded(
-              child: Row(
-                children: List.generate(4, (index) {
-                  double leftPadding = 0, rightPadding = 0;
-                  if (index == 0) {
-                    leftPadding = kPadding;
-                  } else if (index > 0 && index < customers.length - 1) {
-                    leftPadding = 10;
-                  } else {
-                    leftPadding = 10;
-                    rightPadding = kPadding;
-                  }
-
-                  return Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: leftPadding, right: rightPadding),
-                      child: CustomerContainer(customer: customers[index]),
-                    ),
-                  );
-                }),
-              ),
+            child: Row(
+              children: List.generate(4, (index) {
+                double leftPadding = 0, rightPadding = 0;
+                if (index == 0) {
+                  leftPadding = kPadding;
+                } else if (index > 0 && index < customers.length - 1) {
+                  leftPadding = 10;
+                } else {
+                  leftPadding = 10;
+                  rightPadding = kPadding;
+                }
+            
+                return Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: leftPadding, right: rightPadding),
+                    child: CustomerContainer(customer: customers[index]),
+                  ),
+                );
+              }),
             ),
           ),
         ],
