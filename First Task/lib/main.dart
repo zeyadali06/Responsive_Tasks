@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_designs/Widgets/TopBar.dart';
 import 'package:responsive_designs/Widgets/CustomDrawer.dart';
 import 'package:responsive_designs/Widgets/CustomerSection.dart';
-import 'package:responsive_designs/Widgets/UpcomingScedule.dart';
+import 'package:responsive_designs/Widgets/UpcomingScheduleStatistics.dart';
+import 'package:responsive_designs/Widgets/UpcomingScheduleListView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,7 +47,28 @@ class HomePage extends StatelessWidget {
                     const TopBar(),
                     const SizedBox(height: 30),
                     CustomerSection(),
-                    const UpcomingScheduleStatistics(),
+                    Expanded(
+                      child: Row(
+                        children: [
+                          const Expanded(
+                            flex: 3,
+                            child: Column(
+                              children: [
+                                UpcomingScheduleStatistics(),
+                              ],
+                            ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              children: [
+                                UpcomingScheduleListView(),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),

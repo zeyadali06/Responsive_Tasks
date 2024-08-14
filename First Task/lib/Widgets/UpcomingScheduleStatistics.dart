@@ -8,7 +8,7 @@ class UpcomingScheduleStatistics extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15),
-      margin: const EdgeInsets.all(kPadding),
+      margin: const EdgeInsets.only(left: kPadding, right: 7.5, bottom: kPadding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(width: .7, color: Colors.black12),
