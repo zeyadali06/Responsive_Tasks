@@ -46,7 +46,8 @@ class HomePage extends StatelessWidget {
                     const SizedBox(height: 20),
                     const TopBar(),
                     const SizedBox(height: 30),
-                    CustomerSection(),
+                    const CustomerSection(),
+                    const SizedBox(height: 20),
                     Expanded(
                       child: Row(
                         children: [
