@@ -10,10 +10,11 @@ class UpcomingScheduleStatistics extends StatelessWidget {
       padding: const EdgeInsets.all(15),
       margin: const EdgeInsets.only(left: kPadding, right: 7.5, bottom: kPadding),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(kRadius),
         border: Border.all(width: .7, color: Colors.black12),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

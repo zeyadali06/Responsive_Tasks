@@ -10,7 +10,7 @@ class UpComingEventSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15),
-      decoration: BoxDecoration(color: const Color(0xff232527), borderRadius: BorderRadius.circular(15)),
+      decoration: BoxDecoration(color: const Color(0xff232527), borderRadius: BorderRadius.circular(kRadius)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

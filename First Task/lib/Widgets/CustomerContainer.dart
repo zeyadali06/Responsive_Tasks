@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_designs/Models/CustomersModel.dart';
+import 'package:responsive_designs/constants.dart';
 
 class CustomerContainer extends StatelessWidget {
   const CustomerContainer({super.key, required this.customer});
@@ -10,7 +11,7 @@ class CustomerContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(kRadius),
         border: Border.all(width: .7, color: Colors.black12),
       ),
       child: Row(

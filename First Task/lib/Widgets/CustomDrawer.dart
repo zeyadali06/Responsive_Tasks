@@ -19,7 +19,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
       backgroundColor: const Color(0xff101214),
       elevation: 0,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: kPadding),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(

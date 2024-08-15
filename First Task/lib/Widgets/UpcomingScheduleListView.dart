@@ -22,7 +22,7 @@ class UpcomingScheduleListView extends StatelessWidget {
         clipBehavior: Clip.hardEdge,
         margin: const EdgeInsets.only(left: 7.5, right: kPadding, bottom: kPadding),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(kRadius),
           border: Border.all(width: .7, color: Colors.black12),
         ),
         child: Column(

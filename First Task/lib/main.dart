@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_designs/Widgets/TopBar.dart';
 import 'package:responsive_designs/Widgets/CustomDrawer.dart';
+import 'package:responsive_designs/Widgets/SalesOverview.dart';
 import 'package:responsive_designs/Widgets/CustomerSection.dart';
-import 'package:responsive_designs/Widgets/UpcomingScheduleStatistics.dart';
 import 'package:responsive_designs/Widgets/UpcomingScheduleListView.dart';
+import 'package:responsive_designs/Widgets/UpcomingScheduleStatistics.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,14 +31,18 @@ class HomePage extends StatelessWidget {
       backgroundColor: const Color(0xff101214),
       body: Row(
         children: [
-          const CustomDrawer(),
+          const Expanded(
+            flex: 180,
+            child: CustomDrawer(),
+          ),
           Expanded(
+            flex: 730,
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(25),
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -55,6 +60,9 @@ class HomePage extends StatelessWidget {
                             flex: 3,
                             child: Column(
                               children: [
+                                Expanded(
+                                  child: SalesOverview(),
+                                ),
                                 UpcomingScheduleStatistics(),
                               ],
                             ),
