@@ -60,9 +60,7 @@ class HomePage extends StatelessWidget {
                             flex: 3,
                             child: Column(
                               children: [
-                                Expanded(
-                                  child: SalesOverview(),
-                                ),
+                                Expanded(child: SalesOverview(values: [7700, 6500, 4200, 5000, 7400, 9200, 6300, 7400, 3800, 5000, 7200, 8500])),
                                 UpcomingScheduleStatistics(),
                               ],
                             ),

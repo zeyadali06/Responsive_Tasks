@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_designs/Widgets/DateDropDownMenu.dart';
 import 'package:responsive_designs/constants.dart';
+import 'package:responsive_designs/Widgets/BarChartSection.dart';
+import 'package:responsive_designs/Widgets/DateDropDownMenu.dart';
 
 class SalesOverview extends StatelessWidget {
-  const SalesOverview({super.key});
+  const SalesOverview({super.key, required this.values});
+
+  final List<double> values;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,9 @@ class SalesOverview extends StatelessWidget {
               const Text('Sales Overview', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
               DateDropDownMenu(onChanged: (val) {}),
             ],
-          )
+          ),
+          const SizedBox(height: 30),
+          Expanded(child: BarChartSection(values: values)),
         ],
       ),
     );
