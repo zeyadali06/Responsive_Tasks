@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_designs/Widgets/CustomCalendar.dart';
 import 'package:responsive_designs/Widgets/TopBar.dart';
 import 'package:responsive_designs/Widgets/CustomDrawer.dart';
 import 'package:responsive_designs/Widgets/SalesOverview.dart';
@@ -69,6 +70,7 @@ class HomePage extends StatelessWidget {
                             flex: 2,
                             child: Column(
                               children: [
+                                CustomCalendar(onDaySelected: (DateTime date) {}),
                                 UpcomingScheduleListView(),
                               ],
                             ),

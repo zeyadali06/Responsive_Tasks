@@ -41,11 +41,7 @@ class BarChartSectionState extends State<BarChartSection> {
                       HorizontalLine(y: 10, color: Colors.grey[100], dashArray: [5], strokeWidth: 1.5),
                     ],
                   ),
-                  gridData: FlGridData(
-                    show: true,
-                    drawVerticalLine: false,
-                    checkToShowHorizontalLine: (value) => value % 2 == 0,
-                  ),
+                  gridData: const FlGridData(show: false, drawVerticalLine: false),
                   titlesData: FlTitlesData(
                     show: true,
                     rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),

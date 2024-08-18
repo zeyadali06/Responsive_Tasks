@@ -12,14 +12,14 @@ class AllDrawerItems extends StatefulWidget {
 
 class _AllDrawerItemsState extends State<AllDrawerItems> {
   List<DrawerItemModel> models = [
-    DrawerItemModel(title: 'Business Overview', icon: Icons.square),
-    DrawerItemModel(title: 'Analytics', icon: Icons.analytics_sharp),
-    DrawerItemModel(title: 'Business Explore', icon: Icons.connect_without_contact_sharp),
-    DrawerItemModel(title: 'Customers', icon: Icons.person_outline),
-    DrawerItemModel(title: 'Messages', icon: Icons.email_outlined),
-    DrawerItemModel(title: 'Customer Reviews', icon: Icons.star_outline_rounded),
-    DrawerItemModel(title: 'Settings', icon: Icons.settings_outlined),
-    DrawerItemModel(title: 'Help Center', icon: Icons.help_center_outlined),
+    const DrawerItemModel(title: 'Business Overview', icon: Icons.square),
+    const DrawerItemModel(title: 'Analytics', icon: Icons.analytics_sharp),
+    const DrawerItemModel(title: 'Business Explore', icon: Icons.connect_without_contact_sharp),
+    const DrawerItemModel(title: 'Customers', icon: Icons.person_outline),
+    const DrawerItemModel(title: 'Messages', icon: Icons.email_outlined),
+    const DrawerItemModel(title: 'Customer Reviews', icon: Icons.star_outline_rounded),
+    const DrawerItemModel(title: 'Settings', icon: Icons.settings_outlined),
+    const DrawerItemModel(title: 'Help Center', icon: Icons.help_center_outlined),
   ];
 
   int activeIndex = 0;
