@@ -9,6 +9,7 @@ class TabletLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: const Color(0xff101214),
       appBar: AppBar(
         toolbarHeight: 40,
