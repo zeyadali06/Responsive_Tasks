@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_designs/ResponsiveFontSize.dart';
 import 'package:responsive_designs/constants.dart';
 
 class BarChartSection extends StatefulWidget {
@@ -64,13 +65,13 @@ class BarChartSectionState extends State<BarChartSection> {
                       tooltipHorizontalAlignment: FLHorizontalAlignment.center,
                       getTooltipItem: (group, groupIndex, rod, rodIndex) {
                         return BarTooltipItem(
-                          'Profit\t\t\t\t\t\t\t\tExpense\n',
-                          TextStyle(color: Colors.grey[500], fontWeight: FontWeight.w500, fontSize: 8),
+                          'Profit\t\t\t\t\t\tExpense\n',
+                          TextStyle(color: Colors.grey[500], fontWeight: FontWeight.w500, fontSize: getResponsiveFontSize(context: context, fontSize: 8)),
                           textAlign: TextAlign.left,
                           children: <TextSpan>[
                             TextSpan(
-                              text: ("${rod.toY}K\t\t\t\t\t\t\t2.6K").toString(),
-                              style: const TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.w500),
+                              text: ("${rod.toY}K\t\t\t\t\t2.6K").toString(),
+                              style: TextStyle(color: Colors.white, fontSize: getResponsiveFontSize(context: context, fontSize: 10), fontWeight: FontWeight.w500),
                             ),
                           ],
                         );
@@ -104,7 +105,18 @@ class BarChartSectionState extends State<BarChartSection> {
 
   Widget getBottomTitles(double value, TitleMeta meta) {
     final List<String> monthsNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    return SideTitleWidget(axisSide: meta.axisSide, space: 15, child: Text(monthsNames[value.toInt()], style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 8)));
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: SideTitleWidget(
+        angle: .6,
+        axisSide: meta.axisSide,
+        space: 0,
+        child: Text(
+          monthsNames[value.toInt()],
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: getResponsiveFontSize(context: context, fontSize: 8)),
+        ),
+      ),
+    );
   }
 
   Widget getLeftTitles(double value, TitleMeta meta) {
@@ -112,6 +124,15 @@ class BarChartSectionState extends State<BarChartSection> {
     if (value.toInt() % 2 == 0) {
       text = "${value.toInt()}K";
     }
-    return SideTitleWidget(axisSide: meta.axisSide, child: Text(text, style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 8)));
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: SideTitleWidget(
+        axisSide: meta.axisSide,
+        child: Text(
+          text,
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: getResponsiveFontSize(context: context, fontSize: 8)),
+        ),
+      ),
+    );
   }
 }

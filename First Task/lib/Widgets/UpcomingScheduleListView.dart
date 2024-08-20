@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_designs/Models/UpcomingScheduleListViewItemModel.dart';
+import 'package:responsive_designs/ResponsiveFontSize.dart';
 import 'package:responsive_designs/Widgets/UpcomingScheduleListViewItem.dart';
 import 'package:responsive_designs/constants.dart';
 
@@ -17,38 +18,43 @@ class UpcomingScheduleListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        clipBehavior: Clip.hardEdge,
-        margin: const EdgeInsets.only(left: 7.5, right: kPadding, bottom: kPadding),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(kRadius),
-          border: Border.all(width: .7, color: Colors.black12),
-        ),
-        child: Column(
-          children: [
-            const SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text('Upcoming Schedule', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500)),
-                  GestureDetector(onTap: () {}, child: const Icon(Icons.more_horiz, size: 16)),
-                ],
-              ),
+    return Container(
+      clipBehavior: Clip.hardEdge,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(kRadius),
+        border: Border.all(width: .7, color: Colors.black12),
+      ),
+      child: Column(
+        children: [
+          const SizedBox(height: 15),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      'Upcoming Schedule',
+                      style: TextStyle(fontSize: getResponsiveFontSize(context: context, fontSize: 12), fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ),
+                GestureDetector(onTap: () {}, child: const Icon(Icons.more_horiz, size: 16)),
+              ],
             ),
-            const SizedBox(height: 10),
-            Expanded(
-              child: ListView.builder(
-                itemCount: models.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return UpcomingScheduleListViewItem(item: models[index]);
-                },
-              ),
-            )
-          ],
-        ),
+          ),
+          const SizedBox(height: 10),
+          Expanded(
+            child: ListView.builder(
+              itemCount: models.length,
+              itemBuilder: (BuildContext context, int index) {
+                return UpcomingScheduleListViewItem(item: models[index]);
+              },
+            ),
+          )
+        ],
       ),
     );
   }

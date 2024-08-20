@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_designs/Models/DrawerItemModel.dart';
+import 'package:responsive_designs/ResponsiveFontSize.dart';
 import 'package:responsive_designs/Widgets/SelectedDrawerItem.dart';
 import 'package:responsive_designs/Widgets/UnselectedDrawerItem.dart';
 
@@ -33,25 +34,28 @@ class _AllDrawerItemsState extends State<AllDrawerItems> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             if (index == 0)
-              const Column(
+              Column(
                 children: [
-                  SizedBox(height: 25),
+                  const SizedBox(height: 25),
                   Padding(
-                    padding: EdgeInsets.only(left: 15),
-                    child: Text('MAIN MENU', style: TextStyle(color: Colors.white, fontSize: 11)),
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Text('MAIN MENU', style: TextStyle(color: Colors.white, fontSize: getResponsiveFontSize(context: context, fontSize: 11))),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                 ],
               ),
             if (index == 4)
-              const Column(
+              Column(
                 children: [
-                  SizedBox(height: 25),
+                  const SizedBox(height: 25),
                   Padding(
-                    padding: EdgeInsets.only(left: 15),
-                    child: Text('SETTINGS', style: TextStyle(color: Colors.white, fontSize: 11)),
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Text(
+                      'SETTINGS',
+                      style: TextStyle(color: Colors.white, fontSize: getResponsiveFontSize(context: context, fontSize: 11)),
+                    ),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                 ],
               ),
             GestureDetector(

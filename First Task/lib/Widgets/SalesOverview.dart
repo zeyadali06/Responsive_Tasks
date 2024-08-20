@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_designs/ResponsiveFontSize.dart';
 import 'package:responsive_designs/constants.dart';
 import 'package:responsive_designs/Widgets/BarChartSection.dart';
 import 'package:responsive_designs/Widgets/DateDropDownMenu.dart';
@@ -12,7 +13,6 @@ class SalesOverview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15),
-      margin: const EdgeInsets.only(left: kPadding, right: 7.5, bottom: kPadding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(kRadius),
         border: Border.all(width: .7, color: Colors.black12),
@@ -22,7 +22,16 @@ class SalesOverview extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Sales Overview', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    'Sales Overview',
+                    style: TextStyle(fontSize: getResponsiveFontSize(context: context, fontSize: 18), fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
               DateDropDownMenu(onChanged: (val) {}),
             ],
           ),

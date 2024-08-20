@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_designs/constants.dart';
+import 'package:responsive_designs/ResponsiveFontSize.dart';
 
 class DateDropDownMenu extends StatefulWidget {
   const DateDropDownMenu({super.key, required this.onChanged});
@@ -37,8 +37,8 @@ class _DateDropDownMenuState extends State<DateDropDownMenu> {
           icon: const Icon(Icons.keyboard_arrow_down_rounded),
           padding: const EdgeInsets.only(left: 10, right: 5),
           value: value,
-          borderRadius: BorderRadius.circular(kRadius),
-          style: const TextStyle(fontSize: 10, color: Colors.black, fontWeight: FontWeight.w500),
+          borderRadius: BorderRadius.circular(10),
+          style: TextStyle(fontSize: getResponsiveFontSize(context: context, fontSize: 10), color: Colors.black, fontWeight: FontWeight.w500),
           items: const [
             DropdownMenuItem<String>(value: 'Day', child: Text('Day')),
             DropdownMenuItem<String>(value: 'Month', child: Text('Month')),

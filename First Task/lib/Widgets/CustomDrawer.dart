@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_designs/ResponsiveFontSize.dart';
 import 'package:responsive_designs/Widgets/UpComingEventSection.dart';
 import 'package:responsive_designs/constants.dart';
 import 'package:responsive_designs/Widgets/AllDrawerItems.dart';
 
 class CustomDrawer extends StatefulWidget {
-  const CustomDrawer({
-    super.key,
-  });
+  const CustomDrawer({super.key, required this.scaffoldKey});
+
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   State<CustomDrawer> createState() => _CustomDrawerState();
@@ -27,25 +28,36 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 20),
-                  const Row(
+                  Row(
                     children: [
-                      CircleAvatar(backgroundColor: kPrimaryColor, child: Text('D')),
-                      SizedBox(width: 10),
-                      Text('Decko', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
-                      Expanded(child: SizedBox()),
-                      Icon(Icons.arrow_back, color: Colors.white),
+                      const CircleAvatar(backgroundColor: kPrimaryColor, child: Text('D')),
+                      const SizedBox(width: 10),
+                      Text(
+                        'Decko',
+                        style: TextStyle(fontSize: getResponsiveFontSize(context: context, fontSize: 14), color: Colors.white, fontWeight: FontWeight.w500),
+                      ),
+                      const Expanded(child: SizedBox()),
+                      IconButton(
+                        onPressed: () {
+                          widget.scaffoldKey.currentState?.closeDrawer();
+                        },
+                        icon: const Icon(Icons.arrow_back, color: Colors.white),
+                      ),
                     ],
                   ),
                   const SizedBox(height: 20),
-                  SizedBox(
-                    height: 35,
+                  Container(
+                    decoration: BoxDecoration(
+                      color: const Color(0xff232527),
+                      borderRadius: BorderRadius.circular(50),
+                    ),
                     child: TextField(
                       cursorColor: Colors.white,
-                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w300, fontSize: 14),
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300, fontSize: getResponsiveFontSize(context: context, fontSize: 14)),
                       decoration: InputDecoration(
                         contentPadding: const EdgeInsets.all(0),
                         hintText: 'Search here...',
-                        hintStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.w300, fontSize: 14),
+                        hintStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.w300, fontSize: getResponsiveFontSize(context: context, fontSize: 14)),
                         prefixIcon: const Icon(Icons.search, color: Colors.white),
                         filled: true,
                         fillColor: const Color(0xff232527),

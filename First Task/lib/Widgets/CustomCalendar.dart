@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_designs/ResponsiveFontSize.dart';
 import 'package:responsive_designs/constants.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -27,7 +28,6 @@ class _CustomCalendarState extends State<CustomCalendar> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 15, bottom: 5),
-      margin: const EdgeInsets.only(left: 7.5, right: kPadding, bottom: kPadding),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(kRadius),
         border: Border.all(width: .7, color: Colors.black12),
@@ -40,7 +40,7 @@ class _CustomCalendarState extends State<CustomCalendar> {
         startingDayOfWeek: StartingDayOfWeek.sunday,
         headerStyle: HeaderStyle(
           headerPadding: const EdgeInsets.only(bottom: 15),
-          titleTextStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+          titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: getResponsiveFontSize(context: context, fontSize: 12)),
           titleCentered: true,
           formatButtonVisible: false,
           leftChevronVisible: true,
@@ -63,7 +63,13 @@ class _CustomCalendarState extends State<CustomCalendar> {
         calendarBuilders: CalendarBuilders(
           dowBuilder: (context, day) {
             return Center(
-              child: Text(weekdays[day.weekday]!, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 10)),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  weekdays[day.weekday]!,
+                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: getResponsiveFontSize(context: context, fontSize: 10)),
+                ),
+              ),
             );
           },
           todayBuilder: (context, day, focusedDay) {
@@ -71,9 +77,34 @@ class _CustomCalendarState extends State<CustomCalendar> {
               child: Container(
                 width: 35,
                 height: 35,
+                padding: const EdgeInsets.all(5),
                 alignment: Alignment.center,
                 decoration: BoxDecoration(borderRadius: const BorderRadius.all(Radius.circular(50)), color: kPrimaryColor.withOpacity(.2)),
-                child: Text(day.day.toString(), style: const TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold)),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    day.day.toString(),
+                    style: TextStyle(color: Colors.black, fontSize: getResponsiveFontSize(context: context, fontSize: 12), fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            );
+          },
+          defaultBuilder: (context, day, focusedDay) {
+            return Center(
+              child: Container(
+                width: 35,
+                height: 35,
+                padding: const EdgeInsets.all(5),
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(50)), color: Colors.white),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    day.day.toString(),
+                    style: TextStyle(color: Colors.black, fontSize: getResponsiveFontSize(context: context, fontSize: 12), fontWeight: FontWeight.bold),
+                  ),
+                ),
               ),
             );
           },
@@ -82,17 +113,24 @@ class _CustomCalendarState extends State<CustomCalendar> {
               child: Container(
                 width: 35,
                 height: 35,
+                padding: const EdgeInsets.all(5),
                 alignment: Alignment.center,
                 decoration: const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(50)), color: kPrimaryColor),
-                child: Text(day.day.toString(), style: const TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold)),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    day.day.toString(),
+                    style: TextStyle(color: Colors.black, fontSize: getResponsiveFontSize(context: context, fontSize: 12), fontWeight: FontWeight.bold),
+                  ),
+                ),
               ),
             );
           },
         ),
-        calendarStyle: const CalendarStyle(
-          weekendTextStyle: TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
-          defaultTextStyle: TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
-          tablePadding: EdgeInsets.symmetric(horizontal: 10),
+        calendarStyle: CalendarStyle(
+          // weekendTextStyle: TextStyle(color: Colors.black, fontSize: getResponsiveFontSize(context: context, fontSize: 12), fontWeight: FontWeight.bold),
+          defaultTextStyle: TextStyle(color: Colors.black, fontSize: getResponsiveFontSize(context: context, fontSize: 12), fontWeight: FontWeight.bold),
+          tablePadding: const EdgeInsets.symmetric(horizontal: 10),
         ),
         selectedDayPredicate: (day) {
           return isSameDay(_focusedDay, day);
