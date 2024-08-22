@@ -23,6 +23,7 @@ class MobileBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Container(
+        clipBehavior: Clip.hardEdge,
         padding: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
           color: Colors.white,

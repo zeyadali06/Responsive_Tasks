@@ -4,7 +4,9 @@ import 'package:responsive_designs/Models/CustomersModel.dart';
 import 'package:responsive_designs/Widgets/CustomerSectionScrollView.dart';
 
 class TabletCustomerSection extends StatefulWidget {
-  const TabletCustomerSection({super.key});
+  const TabletCustomerSection({super.key, required this.width});
+
+  final double width;
 
   @override
   TabletCustomerSectionState createState() => TabletCustomerSectionState();
@@ -36,14 +38,10 @@ class TabletCustomerSectionState extends State<TabletCustomerSection> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return SizedBox(
-          width: constraints.maxWidth,
-          height: _getHeight(constraints.maxWidth),
-          child: CustomerSectionScrollView(customers: customers),
-        );
-      },
+    return SizedBox(
+      width: widget.width,
+      height: _getHeight(widget.width),
+      child: CustomerSectionScrollView(customers: customers),
     );
   }
 }

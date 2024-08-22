@@ -32,9 +32,9 @@ class HomePage extends StatelessWidget {
             if (constraints.maxWidth < 600) {
               return MobileLayout();
             } else if (constraints.maxWidth < 900) {
-              return TabletLayout();
+              return TabletLayout(width: constraints.maxWidth);
             } else {
-              return DesktopLayout();
+              return DesktopLayout(width: constraints.maxWidth);
             }
           },
         ),

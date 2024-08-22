@@ -128,7 +128,6 @@ class _CustomCalendarState extends State<CustomCalendar> {
           },
         ),
         calendarStyle: CalendarStyle(
-          // weekendTextStyle: TextStyle(color: Colors.black, fontSize: getResponsiveFontSize(context: context, fontSize: 12), fontWeight: FontWeight.bold),
           defaultTextStyle: TextStyle(color: Colors.black, fontSize: getResponsiveFontSize(context: context, fontSize: 12), fontWeight: FontWeight.bold),
           tablePadding: const EdgeInsets.symmetric(horizontal: 10),
         ),

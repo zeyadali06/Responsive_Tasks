@@ -3,8 +3,10 @@ import 'package:responsive_designs/Widgets/CustomDrawer.dart';
 import 'package:responsive_designs/Widgets/TabletBody.dart';
 
 class TabletLayout extends StatelessWidget {
-  TabletLayout({super.key});
+  TabletLayout({super.key, required this.width});
+
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class TabletLayout extends StatelessWidget {
         foregroundColor: Colors.white,
       ),
       drawer: CustomDrawer(scaffoldKey: scaffoldKey),
-      body: const TabletBody(),
+      body: TabletBody(width: width),
     );
   }
 }
