@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondtask/Widgets/CustomDrawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: CustomDrawer(),
+    );
   }
 }
