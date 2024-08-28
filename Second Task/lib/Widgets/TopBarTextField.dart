@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:secondtask/assets.dart';
 import 'package:secondtask/constants.dart';
 
 class TopBarTextField extends StatelessWidget {
@@ -13,12 +15,14 @@ class TopBarTextField extends StatelessWidget {
           suffixIcon: Padding(
             padding: const EdgeInsets.only(right: 7),
             child: Container(
+              clipBehavior: Clip.hardEdge,
               decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(kRadius)),
-              child: IconButton(
+              child: MaterialButton(
                 onPressed: () {},
+                minWidth: 50,
                 padding: EdgeInsets.zero,
                 hoverColor: Colors.transparent,
-                icon: const Icon(Icons.search, color: Colors.white),
+                child: SvgPicture.asset(Assets.assetsIconsSearch),
               ),
             ),
           ),
