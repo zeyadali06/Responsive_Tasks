@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:secondtask/Widgets/MyFiles.dart';
+import 'package:secondtask/Widgets/StorageDetails.dart';
 import 'package:secondtask/Widgets/TopBar.dart';
 import 'package:secondtask/Widgets/CustomDrawer.dart';
+import 'package:secondtask/constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,18 +31,30 @@ class HomePage extends StatelessWidget {
       backgroundColor: const Color(0xff212332),
       body: Row(
         children: [
-          CustomDrawer(),
-          const SizedBox(width: 20),
+          Expanded(flex: 32, child: CustomDrawer()),
+          const SizedBox(width: kPadding),
           const Expanded(
+            flex: 160,
             child: Column(
               children: [
-                SizedBox(height: 25),
+                SizedBox(height: kPadding),
                 TopBar(),
-                SizedBox(height: 25),
+                SizedBox(height: kPadding),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 110,
+                      child: MyFiles(),
+                    ),
+                    SizedBox(width: kPadding),
+                    Expanded(flex: 45, child: StorageDetails()),
+                  ],
+                )
               ],
             ),
           ),
-          const SizedBox(width: 20),
+          const SizedBox(width: kPadding),
         ],
       ),
     );
