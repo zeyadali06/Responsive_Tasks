@@ -33,9 +33,13 @@ class CustomDrawer extends StatelessWidget {
             colorFilter: const ColorFilter.mode(Color(0xff9b9b9d), BlendMode.srcIn),
             height: 16,
           ),
-          title: Text(
-            drawerItems[index].title,
-            style: const TextStyle(color: Color(0xff9b9b9d), fontSize: 16, fontWeight: FontWeight.w500),
+          title: FittedBox(
+            alignment: Alignment.centerLeft,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              drawerItems[index].title,
+              style: const TextStyle(color: Color(0xff9b9b9d), fontSize: 16, fontWeight: FontWeight.w500),
+            ),
           ),
         );
       }),

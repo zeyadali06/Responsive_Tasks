@@ -43,10 +43,7 @@ class HomePage extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(
-                      flex: 110,
-                      child: MyFiles(),
-                    ),
+                    Expanded(flex: 110, child: MyFiles()),
                     SizedBox(width: kPadding),
                     Expanded(flex: 45, child: StorageDetails()),
                   ],
@@ -60,3 +57,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+

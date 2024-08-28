@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:secondtask/constants.dart';
 
 class CustomContainer extends StatelessWidget {
-  const CustomContainer({super.key, required this.child});
+  const CustomContainer({super.key, this.child});
 
-  final Widget child;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {

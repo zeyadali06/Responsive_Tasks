@@ -1,17 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:secondtask/Widgets/CustomContainer.dart';
+import 'package:secondtask/Models/FileCategoryModel.dart';
+import 'package:secondtask/Widgets/FileCategoryContainer.dart';
+import 'package:secondtask/assets.dart';
+import 'package:secondtask/constants.dart';
 
 class FileCategories extends StatelessWidget {
-  const FileCategories({super.key});
+  FileCategories({super.key});
+
+  final List<FileCategoryModel> models = [
+    FileCategoryModel(svgPath: Assets.assetsIconsDocuments, color: const Color(0xff2697ff), title: 'Documents', numberOfFiles: 1328, storage: 1.9),
+    FileCategoryModel(svgPath: Assets.assetsIconsGoogleDrive, color: const Color(0xffffa113), title: 'Google Drive', numberOfFiles: 1328, storage: 2.9),
+    FileCategoryModel(svgPath: Assets.assetsIconsOneDrive, color: const Color(0xffa4cdff), title: 'One Drive', numberOfFiles: 1328, storage: 1),
+    FileCategoryModel(svgPath: Assets.assetsIconsDropBox, color: const Color(0xff007ee5), title: 'Documents', numberOfFiles: 5328, storage: 7.3),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CustomContainer(child: Container()),
-        CustomContainer(child: Container()),
-        CustomContainer(child: Container()),
-        CustomContainer(child: Container()),
+        Expanded(child: FileCategoryContainer(model: models[0])),
+        const SizedBox(width: kPadding),
+        Expanded(child: FileCategoryContainer(model: models[1])),
+        const SizedBox(width: kPadding),
+        Expanded(child: FileCategoryContainer(model: models[2])),
+        const SizedBox(width: kPadding),
+        Expanded(child: FileCategoryContainer(model: models[3])),
       ],
     );
   }
