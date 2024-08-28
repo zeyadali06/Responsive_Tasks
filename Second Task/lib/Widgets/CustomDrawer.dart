@@ -35,7 +35,7 @@ class CustomDrawer extends StatelessWidget {
           ),
           title: Text(
             drawerItems[index].title,
-            style: const TextStyle(color: Color(0xff9b9b9d), fontFamily: 'Poppins', fontSize: 16, fontWeight: FontWeight.w500),
+            style: const TextStyle(color: Color(0xff9b9b9d), fontSize: 16, fontWeight: FontWeight.w500),
           ),
         );
       }),

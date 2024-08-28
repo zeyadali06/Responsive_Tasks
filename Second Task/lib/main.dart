@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondtask/Widgets/TopBar.dart';
 import 'package:secondtask/Widgets/CustomDrawer.dart';
 
 void main() {
@@ -10,8 +11,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return MaterialApp(
+      theme: ThemeData(fontFamily: 'Poppins'),
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(),
     );
   }
 }
@@ -22,8 +25,23 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      drawer: CustomDrawer(),
+      backgroundColor: const Color(0xff212332),
+      body: Row(
+        children: [
+          CustomDrawer(),
+          const SizedBox(width: 20),
+          const Expanded(
+            child: Column(
+              children: [
+                SizedBox(height: 25),
+                TopBar(),
+                SizedBox(height: 25),
+              ],
+            ),
+          ),
+          const SizedBox(width: 20),
+        ],
+      ),
     );
   }
 }
