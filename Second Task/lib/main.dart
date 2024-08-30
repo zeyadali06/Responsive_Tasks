@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
         children: [
           Expanded(flex: 32, child: CustomDrawer()),
           const SizedBox(width: kPadding),
-          const Expanded(
+           Expanded(
             flex: 160,
             child: Column(
               children: [
