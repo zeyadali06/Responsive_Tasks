@@ -32,7 +32,7 @@ class MyFiles extends StatelessWidget {
         const SizedBox(height: kPadding),
         FileCategories(),
         const SizedBox(height: kPadding),
-        const RecentFiles(),
+         RecentFiles(),
       ],
     );
   }
