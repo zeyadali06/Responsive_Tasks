@@ -39,7 +39,10 @@ class FileCategoryContainer extends StatelessWidget {
           const SizedBox(height: 10),
           FittedBox(
             fit: BoxFit.scaleDown,
-            child: Text(model.title, style: const TextStyle(color: Colors.white)),
+            child: Text(
+              model.title,
+              style: const TextStyle(color: Colors.white),
+            ),
           ),
           const SizedBox(height: 10),
           SizedBox(
@@ -72,11 +75,17 @@ class FileCategoryContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ScaleDown(
-                child: Text(model.numberOfFiles.toString(), style: const TextStyle(color: Color(0xffc0c0c5), fontSize: 12)),
+                child: Text(
+                  model.numberOfFiles.toString(),
+                  style: const TextStyle(color: Color(0xffc0c0c5), fontSize: 12),
+                ),
               ),
               const SizedBox(width: 5),
               ScaleDown(
-                child: Text("${model.storage.toStringAsFixed(1)}GB", style: const TextStyle(color: Colors.white, fontSize: 14)),
+                child: Text(
+                  "${model.storage.toStringAsFixed(1)}GB",
+                  style: const TextStyle(color: Colors.white, fontSize: 14),
+                ),
               ),
             ],
           )

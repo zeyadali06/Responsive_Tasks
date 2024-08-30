@@ -29,14 +29,23 @@ class StorageDetailsItem extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(model.title, style: const TextStyle(color: Colors.white, fontSize: 14)),
-                    Text("${model.numberOfFiles.toString()} Files", style: const TextStyle(color: Color(0xffb5b6bc), fontSize: 12, fontWeight: FontWeight.w500)),
+                    Text(
+                      model.title,
+                      style: const TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                    Text(
+                      "${model.numberOfFiles.toString()} Files",
+                      style: const TextStyle(color: Color(0xffb5b6bc), fontSize: 12, fontWeight: FontWeight.w500),
+                    ),
                   ],
                 ),
               ],
             ),
             const SizedBox(width: 10),
-            Text("${model.fileSize.toStringAsFixed(1)}GB", style: const TextStyle(color: Colors.white, fontSize: 14)),
+            Text(
+              "${model.fileSize.toStringAsFixed(1)}GB",
+              style: const TextStyle(color: Colors.white, fontSize: 14),
+            ),
           ],
         ),
       ),

@@ -17,19 +17,28 @@ class RecentFilesItem extends StatelessWidget {
                 const SizedBox(width: 25),
                 SvgPicture.asset(model.svgPath),
                 const SizedBox(width: 15),
-                Text(model.fileName, style: const TextStyle(color: Colors.white)),
+                Text(
+                  model.fileName,
+                  style: const TextStyle(color: Colors.white),
+                ),
               ],
             ),
           ),
         ),
         Expanded(
           child: SizedBox(
-            child: Text(model.date, style: const TextStyle(color: Colors.white)),
+            child: Text(
+              model.date,
+              style: const TextStyle(color: Colors.white),
+            ),
           ),
         ),
         Expanded(
           child: SizedBox(
-            child: Text(model.size, style: const TextStyle(color: Colors.white)),
+            child: Text(
+              model.size,
+              style: const TextStyle(color: Colors.white),
+            ),
           ),
         ),
       ],

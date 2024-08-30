@@ -23,7 +23,10 @@ class StorageDetails extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Storage Details', style: TextStyle(fontSize: 18, color: Colors.white)),
+          const Text(
+            'Storage Details',
+            style: TextStyle(fontSize: 18, color: Colors.white),
+          ),
           const SizedBox(height: 20),
           SizedBox(
             height: 200,
@@ -36,8 +39,18 @@ class StorageDetails extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        ScaleDown(child: Text('29.1', style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w500, height: .5))),
-                        ScaleDown(child: Text('of 128GB', style: TextStyle(color: Colors.white))),
+                        ScaleDown(
+                          child: Text(
+                            '29.1',
+                            style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w500, height: .5),
+                          ),
+                        ),
+                        ScaleDown(
+                          child: Text(
+                            'of 128GB',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
                       ],
                     ),
                   ),

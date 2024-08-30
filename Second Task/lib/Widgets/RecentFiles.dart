@@ -32,19 +32,28 @@ class RecentFiles extends StatelessWidget {
               child: Row(
                 children: [
                   SizedBox(width: 25),
-                  Text('File Name', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
+                  Text(
+                    'File Name',
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+                  ),
                 ],
               ),
             ),
           ),
           Expanded(
             child: SizedBox(
-              child: Text('Date', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
+              child: Text(
+                'Date',
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+              ),
             ),
           ),
           Expanded(
             child: SizedBox(
-              child: Text('Size', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
+              child: Text(
+                'Size',
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+              ),
             ),
           ),
         ],

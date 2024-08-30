@@ -13,7 +13,10 @@ class MyFiles extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text('My Files', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white)),
+            const Text(
+              'My Files',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),
+            ),
             MaterialButton(
               onPressed: () {},
               height: 50,
@@ -23,7 +26,10 @@ class MyFiles extends StatelessWidget {
                 children: [
                   Icon(Icons.add, color: Colors.white, size: 20),
                   SizedBox(width: 5),
-                  Text('Add New', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400)),
+                  Text(
+                    'Add New',
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
+                  ),
                 ],
               ),
             ),
@@ -32,7 +38,7 @@ class MyFiles extends StatelessWidget {
         const SizedBox(height: kPadding),
         FileCategories(),
         const SizedBox(height: kPadding),
-         RecentFiles(),
+        RecentFiles(),
       ],
     );
   }

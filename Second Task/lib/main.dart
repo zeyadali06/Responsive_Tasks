@@ -33,18 +33,18 @@ class HomePage extends StatelessWidget {
         children: [
           Expanded(flex: 32, child: CustomDrawer()),
           const SizedBox(width: kPadding),
-           Expanded(
+          Expanded(
             flex: 160,
             child: Column(
               children: [
-                SizedBox(height: kPadding),
-                TopBar(),
-                SizedBox(height: kPadding),
+                const SizedBox(height: kPadding),
+                const TopBar(),
+                const SizedBox(height: kPadding),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(flex: 110, child: MyFiles()),
-                    SizedBox(width: kPadding),
+                    const Expanded(flex: 110, child: MyFiles()),
+                    const SizedBox(width: kPadding),
                     Expanded(flex: 45, child: StorageDetails()),
                   ],
                 )
