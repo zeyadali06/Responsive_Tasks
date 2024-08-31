@@ -10,36 +10,37 @@ class RecentFilesItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        const SizedBox(width: 25),
+        SvgPicture.asset(model.svgPath),
+        const SizedBox(width: 15),
         Expanded(
-          flex: 5,
-          child: SizedBox(
-            child: Row(
-              children: [
-                const SizedBox(width: 25),
-                SvgPicture.asset(model.svgPath),
-                const SizedBox(width: 15),
-                Text(
-                  model.fileName,
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-          ),
-        ),
-        Expanded(
-          flex: 3,
           child: SizedBox(
             child: Text(
-              model.date,
+              model.fileName,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(color: Colors.white),
             ),
           ),
         ),
+        const SizedBox(width: 5),
         Expanded(
-          flex: 3,
+          child: SizedBox(
+            child: Text(
+              model.date,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(color: Colors.white),
+            ),
+          ),
+        ),
+        const SizedBox(width: 5),
+        Expanded(
           child: SizedBox(
             child: Text(
               model.size,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: const TextStyle(color: Colors.white),
             ),
           ),

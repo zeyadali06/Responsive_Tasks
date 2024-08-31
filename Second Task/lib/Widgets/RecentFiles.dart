@@ -27,35 +27,35 @@ class RecentFiles extends StatelessWidget {
       const SizedBox(height: 15),
       const Row(
         children: [
+          SizedBox(width: 25),
           Expanded(
-            flex: 5,
-            child: SizedBox(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SizedBox(width: 25),
-                  Text(
-                    'File Name',
-                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 3,
             child: SizedBox(
               child: Text(
-                'Date',
+                'File Name',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
               ),
             ),
           ),
+          SizedBox(width: 50),
           Expanded(
-            flex: 3,
+            child: SizedBox(
+              child: Text(
+                'Date',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+              ),
+            ),
+          ),
+          SizedBox(width: 5),
+          Expanded(
             child: SizedBox(
               child: Text(
                 'Size',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
               ),
             ),

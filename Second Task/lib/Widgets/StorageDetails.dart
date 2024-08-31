@@ -41,15 +41,17 @@ class StorageDetails extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          '29.1',
-                          style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w500, height: .5, overflow: TextOverflow.ellipsis),
-                          overflow: TextOverflow.ellipsis,
+                        FittedBox(
+                          child: Text(
+                            '29.1',
+                            style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w500, height: .5, overflow: TextOverflow.ellipsis),
+                          ),
                         ),
-                        Text(
-                          'of 128GB',
-                          style: TextStyle(color: Colors.white, overflow: TextOverflow.ellipsis),
-                          overflow: TextOverflow.ellipsis,
+                        FittedBox(
+                          child: Text(
+                            'of 128GB',
+                            style: TextStyle(color: Colors.white, overflow: TextOverflow.ellipsis),
+                          ),
                         ),
                       ],
                     ),

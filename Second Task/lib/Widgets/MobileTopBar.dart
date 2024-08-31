@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondtask/Widgets/ScaleDown.dart';
 import 'package:secondtask/Widgets/TopBarTextField.dart';
 import 'package:secondtask/Widgets/UserContainer.dart';
 
@@ -19,9 +20,9 @@ class MobileTopBar extends StatelessWidget {
           icon: const Icon(Icons.menu, color: Colors.white),
         ),
         const SizedBox(width: 15),
-        const Expanded(child: TopBarTextField()),
+        const ScaleDown(child: TopBarTextField()),
         const SizedBox(width: 15),
-        const UserContainer(),
+        const ScaleDown(child: UserContainer()),
       ],
     );
   }

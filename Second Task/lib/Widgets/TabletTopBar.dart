@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondtask/Widgets/ScaleDown.dart';
 import 'package:secondtask/Widgets/UserContainer.dart';
 import 'package:secondtask/Widgets/TopBarTextField.dart';
 
@@ -22,10 +23,10 @@ class TabletTopBar extends StatelessWidget {
           'Dashboard',
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
-        const Expanded(child: SizedBox()),
-        const TopBarTextField(),
+        const Expanded(child: SizedBox(width: 10)),
+        const ScaleDown(child: TopBarTextField()),
         const SizedBox(width: 15),
-        const UserContainer(),
+        const ScaleDown(child: UserContainer()),
       ],
     );
   }

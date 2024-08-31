@@ -13,7 +13,7 @@ class DesktopTopBar extends StatelessWidget {
           'Dashboard',
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
-        Expanded(child: SizedBox()),
+        Expanded(flex: 2,child: SizedBox(width: 10)),
         TopBarTextField(),
         SizedBox(width: 15),
         UserContainer(),

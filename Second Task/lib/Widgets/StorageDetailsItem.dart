@@ -18,40 +18,37 @@ class StorageDetailsItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(
-                  height: 20,
-                  width: 20,
-                  child: SvgPicture.asset(model.svgPath, height: 20),
-                ),
-                const SizedBox(width: 20),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      model.title,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      overflow: TextOverflow.ellipsis,
+            SizedBox(
+              height: 20,
+              width: 20,
+              child: SvgPicture.asset(model.svgPath, height: 20),
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    model.title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
                     ),
-                    Text(
-                      "${model.numberOfFiles.toString()} Files",
-                      style: const TextStyle(
-                        color: Color(0xffb5b6bc),
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  Text(
+                    "${model.numberOfFiles.toString()} Files",
+                    style: const TextStyle(
+                      color: Color(0xffb5b6bc),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
                     ),
-                  ],
-                ),
-              ],
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
             ),
             const SizedBox(width: 10),
             Text(

@@ -25,7 +25,7 @@ class FileCategories extends StatelessWidget {
           crossAxisCount: constraints.maxWidth > 500 ? 4 : 2,
           mainAxisSpacing: kPadding,
           crossAxisSpacing: kPadding,
-          mainAxisExtent: 150,
+          mainAxisExtent: 160,
         ),
         itemBuilder: (context, index) {
           return FileCategoryContainer(model: models[index]);

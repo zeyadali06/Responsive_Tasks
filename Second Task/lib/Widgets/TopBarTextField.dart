@@ -8,9 +8,12 @@ class TopBarTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      constraints: const BoxConstraints(minWidth: 200),
       width: MediaQuery.sizeOf(context).width * .19,
       child: TextField(
+        style: const TextStyle(color: Colors.white),
+        cursorColor: Colors.blue,
         decoration: InputDecoration(
           suffixIcon: Padding(
             padding: const EdgeInsets.only(right: 7),
