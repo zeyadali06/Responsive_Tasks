@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:secondtask/Widgets/MyFiles.dart';
-import 'package:secondtask/Widgets/StorageDetails.dart';
-import 'package:secondtask/Widgets/TopBar.dart';
 import 'package:secondtask/constants.dart';
+import 'package:secondtask/Widgets/MyFiles.dart';
+import 'package:secondtask/Widgets/TabletTopBar.dart';
+import 'package:secondtask/Widgets/StorageDetails.dart';
 
 class TabletLayout extends StatelessWidget {
-  const TabletLayout({super.key});
+  const TabletLayout({super.key, required this.scaffoldKey});
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class TabletLayout extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: kPadding),
-          const TopBar(),
+          TabletTopBar(scaffoldKey: scaffoldKey),
           const SizedBox(height: kPadding),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
