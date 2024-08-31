@@ -26,9 +26,9 @@ class DesktopLayout extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Expanded(flex: 110, child: MyFiles()),
+                    const Expanded(flex: 2, child: MyFiles()),
                     const SizedBox(width: kPadding),
-                    Expanded(flex: 45, child: StorageDetails()),
+                    Expanded(flex: 1, child: StorageDetails()),
                   ],
                 ),
                 const SizedBox(height: kPadding),
