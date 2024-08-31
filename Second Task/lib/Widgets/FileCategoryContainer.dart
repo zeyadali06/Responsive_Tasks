@@ -14,6 +14,7 @@ class FileCategoryContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomContainer(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
@@ -33,10 +34,9 @@ class FileCategoryContainer extends StatelessWidget {
               ),
               const ScaleDown(
                 child: Icon(Icons.more_vert, color: Color(0xff9d9fa6)),
-              )
+              ),
             ],
           ),
-          const SizedBox(height: 10),
           FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
@@ -44,7 +44,6 @@ class FileCategoryContainer extends StatelessWidget {
               style: const TextStyle(color: Colors.white),
             ),
           ),
-          const SizedBox(height: 10),
           SizedBox(
             height: 5,
             child: LayoutBuilder(
@@ -70,7 +69,6 @@ class FileCategoryContainer extends StatelessWidget {
               },
             ),
           ),
-          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:secondtask/Widgets/ScaleDown.dart';
 import 'package:secondtask/assets.dart';
 import 'package:secondtask/constants.dart';
 import 'package:secondtask/Widgets/CustomContainer.dart';
@@ -23,9 +22,12 @@ class StorageDetails extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Storage Details',
-            style: TextStyle(fontSize: 18, color: Colors.white),
+          const FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              'Storage Details',
+              style: TextStyle(fontSize: 18, color: Colors.white),
+            ),
           ),
           const SizedBox(height: 20),
           SizedBox(
@@ -39,17 +41,15 @@ class StorageDetails extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        ScaleDown(
-                          child: Text(
-                            '29.1',
-                            style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w500, height: .5),
-                          ),
+                        Text(
+                          '29.1',
+                          style: TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.w500, height: .5, overflow: TextOverflow.ellipsis),
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        ScaleDown(
-                          child: Text(
-                            'of 128GB',
-                            style: TextStyle(color: Colors.white),
-                          ),
+                        Text(
+                          'of 128GB',
+                          style: TextStyle(color: Colors.white, overflow: TextOverflow.ellipsis),
+                          overflow: TextOverflow.ellipsis,
                         ),
                       ],
                     ),

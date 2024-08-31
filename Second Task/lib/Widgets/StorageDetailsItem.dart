@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter/material.dart';
 import 'package:secondtask/Models/StorageDetailsItemModel.dart';
 
 class StorageDetailsItem extends StatelessWidget {
@@ -19,6 +19,7 @@ class StorageDetailsItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 SizedBox(
                   height: 20,
@@ -31,11 +32,22 @@ class StorageDetailsItem extends StatelessWidget {
                   children: [
                     Text(
                       model.title,
-                      style: const TextStyle(color: Colors.white, fontSize: 14),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      overflow: TextOverflow.ellipsis,
                     ),
                     Text(
                       "${model.numberOfFiles.toString()} Files",
-                      style: const TextStyle(color: Color(0xffb5b6bc), fontSize: 12, fontWeight: FontWeight.w500),
+                      style: const TextStyle(
+                        color: Color(0xffb5b6bc),
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ],
                 ),

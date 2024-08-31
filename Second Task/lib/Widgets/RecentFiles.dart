@@ -28,8 +28,10 @@ class RecentFiles extends StatelessWidget {
       const Row(
         children: [
           Expanded(
+            flex: 5,
             child: SizedBox(
               child: Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   SizedBox(width: 25),
                   Text(
@@ -41,6 +43,7 @@ class RecentFiles extends StatelessWidget {
             ),
           ),
           Expanded(
+            flex: 3,
             child: SizedBox(
               child: Text(
                 'Date',
@@ -49,6 +52,7 @@ class RecentFiles extends StatelessWidget {
             ),
           ),
           Expanded(
+            flex: 3,
             child: SizedBox(
               child: Text(
                 'Size',

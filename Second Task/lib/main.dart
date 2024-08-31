@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:secondtask/Widgets/MyFiles.dart';
-import 'package:secondtask/Widgets/StorageDetails.dart';
-import 'package:secondtask/Widgets/TopBar.dart';
-import 'package:secondtask/Widgets/CustomDrawer.dart';
-import 'package:secondtask/constants.dart';
+import 'package:secondtask/Layouts/MobileLayout.dart';
+import 'package:secondtask/Layouts/TabletLayout.dart';
+import 'package:secondtask/Layouts/DesktopLayout.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,34 +27,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff212332),
-      body: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(flex: 32, child: CustomDrawer()),
-          const SizedBox(width: kPadding),
-          Expanded(
-            flex: 160,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const SizedBox(height: kPadding),
-                  const TopBar(),
-                  const SizedBox(height: kPadding),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Expanded(flex: 110, child: MyFiles()),
-                      const SizedBox(width: kPadding),
-                      Expanded(flex: 45, child: StorageDetails()),
-                    ],
-                  ),
-                  const SizedBox(height: kPadding),
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(width: kPadding),
-        ],
+      body: SafeArea(
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            if (constraints.maxWidth < 600) {
+              return const MobileLayout();
+            } else if (constraints.maxWidth < 900) {
+              return const TabletLayout();
+            } else {
+              return const DesktopLayout();
+            }
+          },
+        ),
       ),
     );
   }

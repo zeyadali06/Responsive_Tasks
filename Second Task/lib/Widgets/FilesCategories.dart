@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:secondtask/assets.dart';
 import 'package:secondtask/Models/FileCategoryModel.dart';
 import 'package:secondtask/Widgets/FileCategoryContainer.dart';
-import 'package:secondtask/assets.dart';
 import 'package:secondtask/constants.dart';
 
 class FileCategories extends StatelessWidget {
@@ -16,16 +16,21 @@ class FileCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(child: FileCategoryContainer(model: models[0])),
-        const SizedBox(width: kPadding),
-        Expanded(child: FileCategoryContainer(model: models[1])),
-        const SizedBox(width: kPadding),
-        Expanded(child: FileCategoryContainer(model: models[2])),
-        const SizedBox(width: kPadding),
-        Expanded(child: FileCategoryContainer(model: models[3])),
-      ],
-    );
+    return LayoutBuilder(builder: (context, constraints) {
+      return GridView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        itemCount: models.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: constraints.maxWidth > 500 ? 4 : 2,
+          mainAxisSpacing: kPadding,
+          crossAxisSpacing: kPadding,
+          mainAxisExtent: 150,
+        ),
+        itemBuilder: (context, index) {
+          return FileCategoryContainer(model: models[index]);
+        },
+      );
+    });
   }
 }

@@ -11,6 +11,7 @@ class RecentFilesItem extends StatelessWidget {
     return Row(
       children: [
         Expanded(
+          flex: 5,
           child: SizedBox(
             child: Row(
               children: [
@@ -26,6 +27,7 @@ class RecentFilesItem extends StatelessWidget {
           ),
         ),
         Expanded(
+          flex: 3,
           child: SizedBox(
             child: Text(
               model.date,
@@ -34,6 +36,7 @@ class RecentFilesItem extends StatelessWidget {
           ),
         ),
         Expanded(
+          flex: 3,
           child: SizedBox(
             child: Text(
               model.size,
